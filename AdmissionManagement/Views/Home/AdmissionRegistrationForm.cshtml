@@ -1,0 +1,345 @@
+﻿@model AdmissionsManagement.Models.Cadidate
+
+<script src="https://cdn02.jotfor.ms/static/prototype.forms.js?v=3.3.53028" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?v=3.3.53028" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/maskedinput_5.0.9.min.js?v=3.3.53028" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/js/punycode-1.4.1.min.js?v=3.3.53028" type="text/javascript" defer></script>
+
+<script src="https://cdn03.jotfor.ms/js/vendor/smoothscroll.min.js?v=3.3.53028" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/errorNavigation.js?v=3.3.53028" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.texts = {"confirmEmail":"E-mail does not match","pleaseWait":"Please wait...","validateEmail":"You need to validate this e-mail","confirmClearForm":"Are you sure you want to clear the form","lessThan":"Your score should be less than or equal to","incompleteFields":"There are incomplete required fields. Please complete them.","required":"This field is required.","requireOne":"At least one field required.","requireEveryRow":"Every row is required.","requireEveryCell":"Every cell is required.","email":"Enter a valid e-mail address","alphabetic":"This field can only contain letters","numeric":"This field can only contain numeric values","alphanumeric":"This field can only contain letters and numbers.","cyrillic":"This field can only contain cyrillic characters","url":"This field can only contain a valid URL","currency":"This field can only contain currency values.","fillMask":"Field value must fill mask.","uploadExtensions":"You can only upload following files:","noUploadExtensions":"File has no extension file type (e.g. .txt, .png, .jpeg)","uploadFilesize":"File size cannot be bigger than:","uploadFilesizemin":"File size cannot be smaller than:","gradingScoreError":"Score total should only be less than or equal to","inputCarretErrorA":"Input should not be less than the minimum value:","inputCarretErrorB":"Input should not be greater than the maximum value:","maxDigitsError":"The maximum digits allowed is","minCharactersError":"The number of characters should not be less than the minimum value:","maxCharactersError":"The number of characters should not be more than the maximum value:","freeEmailError":"Free email accounts are not allowed","minSelectionsError":"The minimum required number of selections is ","maxSelectionsError":"The maximum number of selections allowed is ","pastDatesDisallowed":"Date must not be in the past.","dateLimited":"This date is unavailable.","dateInvalid":"This date is not valid. The date format is {format}","dateInvalidSeparate":"This date is not valid. Enter a valid {element}.","ageVerificationError":"You must be older than {minAge} years old to submit this form.","multipleFileUploads_typeError":"{file} has invalid extension. Only {extensions} are allowed.","multipleFileUploads_sizeError":"{file} is too large, maximum file size is {sizeLimit}.","multipleFileUploads_minSizeError":"{file} is too small, minimum file size is {minSizeLimit}.","multipleFileUploads_emptyError":"{file} is empty, please select files again without it.","multipleFileUploads_uploadFailed":"File upload failed, please remove it and upload the file again.","multipleFileUploads_onLeave":"The files are being uploaded, if you leave now the upload will be cancelled.","multipleFileUploads_fileLimitError":"Only {fileLimit} file uploads allowed.","dragAndDropFilesHere_infoMessage":"Drag and drop files here","chooseAFile_infoMessage":"Choose a file","maxFileSize_infoMessage":"Max. file size","generalError":"There are errors on the form. Please fix them before continuing.","generalPageError":"There are errors on this page. Please fix them before continuing.","wordLimitError":"Too many words. The limit is","wordMinLimitError":"Too few words.  The minimum is","characterLimitError":"Too many Characters.  The limit is","characterMinLimitError":"Too few characters. The minimum is","ccInvalidNumber":"Credit Card Number is invalid.","ccInvalidCVC":"CVC number is invalid.","ccInvalidExpireDate":"Expire date is invalid.","ccInvalidExpireMonth":"Expiration month is invalid.","ccInvalidExpireYear":"Expiration year is invalid.","ccMissingDetails":"Please fill up the credit card details.","ccMissingProduct":"Please select at least one product.","ccMissingDonation":"Please enter numeric values for donation amount.","disallowDecimals":"Please enter a whole number.","restrictedDomain":"This domain is not allowed","ccDonationMinLimitError":"Minimum amount is {minAmount} {currency}","requiredLegend":"All fields marked with * are required and must be filled.","geoPermissionTitle":"Permission Denied","geoPermissionDesc":"Check your browser's privacy settings.","geoNotAvailableTitle":"Position Unavailable","geoNotAvailableDesc":"Location provider not available. Please enter the address manually.","geoTimeoutTitle":"Timeout","geoTimeoutDesc":"Please check your internet connection and try again.","selectedTime":"Selected Time","formerSelectedTime":"Former Time","cancelAppointment":"Cancel Appointment","cancelSelection":"Cancel Selection","noSlotsAvailable":"No slots available","slotUnavailable":"{time} on {date} has been selected is unavailable. Please select another slot.","multipleError":"There are {count} errors on this page. Please correct them before moving on.","oneError":"There is {count} error on this page. Please correct it before moving on.","doneMessage":"Well done! All errors are fixed.","invalidTime":"Enter a valid time","doneButton":"Done","reviewSubmitText":"Review and Submit","nextButtonText":"Next","prevButtonText":"Previous","seeErrorsButton":"See Errors","notEnoughStock":"Not enough stock for the current selection","notEnoughStock_remainedItems":"Not enough stock for the current selection ({count} items left)","soldOut":"Sold Out","justSoldOut":"Just Sold Out","selectionSoldOut":"Selection Sold Out","subProductItemsLeft":"({count} items left)","startButtonText":"START","submitButtonText":"Submit","submissionLimit":"Sorry! Only one entry is allowed. Multiple submissions are disabled for this form.","reviewBackText":"Back to Form","seeAllText":"See All","progressMiddleText":"of","fieldError":"field has an error.","error":"Error"};
+	JotForm.newPaymentUI = true;
+	JotForm.replaceTagTest = true;
+
+   JotForm.setConditions([{"action":[{"id":"action_1671531409166","visibility":"Show","isError":false,"field":"61"}],"id":"1671531419676","index":"0","link":"Any","priority":"0","terms":[{"id":"term_1671531409166","field":"60","operator":"equals","value":"Yes","isError":false}],"type":"field"}]);	JotForm.submitError="jumpToFirstError";
+	
+
+	JotForm.init(function(){
+	/*INIT-START*/
+      JotForm.setPhoneMaskingValidator( 'input_41_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_59').setAttribute('tabindex',0);
+      JotForm.setPhoneMaskingValidator( 'input_69_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_61').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_63').setAttribute('tabindex',0);
+
+ JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ if (!JotForm.calenderViewMonths) JotForm.calenderViewMonths = {};  JotForm.calenderViewMonths[65] = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ if (!JotForm.calenderViewDays) JotForm.calenderViewDays = {};  JotForm.calenderViewDays[65] = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ JotForm.calendarOther = {"today":"Today"};
+ var languageOptions = document.querySelectorAll('#langList li'); 
+ for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("65", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); }, 0); });
+ } 
+ JotForm.onTranslationsFetch(function() { JotForm.setCalendar("65", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); });
+      JotForm.description('input_50', 'Payment is due 3 days prior to the start of the class');
+      JotForm.alterTexts([""]);
+	/*INIT-END*/
+	});
+
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"gender","qid":"15","text":"Gender","type":"control_radio"},null,null,null,null,null,null,null,null,null,null,null,{"name":"ofWhich","qid":"27","text":"Of which country are you a citizen?","type":"control_dropdown"},null,null,null,null,null,null,null,null,null,null,null,{"name":"birthDate39","qid":"39","text":"Birth Date","type":"control_birthdate"},null,{"name":"phone","qid":"41","text":"Phone","type":"control_phone"},{"name":"address42","qid":"42","text":"Mailing Address","type":"control_address"},{"name":"clickTo","qid":"43","text":"College Admissions Form","type":"control_head"},null,null,{"name":"pageBreak","qid":"46","text":"Page Break","type":"control_pagebreak"},null,null,{"name":"clickTo49","qid":"49","text":"Application Fee","type":"control_head"},{"description":"Payment is due 3 days prior to the start of the class","name":"paymentMethod","qid":"50","text":"Payment Method:","type":"control_checkbox"},null,{"name":"submitForm","qid":"52","text":"Submit Form","type":"control_button"},null,null,{"name":"emailAddress","qid":"55","subLabel":"example@example.com","text":"E-mail Address","type":"control_email"},{"name":"name","qid":"56","text":"Name","type":"control_fullname"},{"name":"pageBreak57","qid":"57","text":"Page Break","type":"control_pagebreak"},{"name":"emergencyContact","qid":"58","text":"Emergency Contact","type":"control_fullname"},{"name":"relationship","qid":"59","text":"Relationship","type":"control_textbox"},{"name":"doYou","qid":"60","text":"Do you speak any languages other than English?","type":"control_radio"},{"mde":"No","name":"pleaseList","qid":"61","text":"Please list them","type":"control_textarea","wysiwyg":"Disable"},{"name":"education","qid":"62","text":"Education","type":"control_head"},{"name":"highSchool","qid":"63","text":"High School or Equivalent Name","type":"control_textbox"},{"name":"schoolAddress","qid":"64","text":"School Address","type":"control_address"},{"name":"graduationDate","qid":"65","text":"Graduation Date","type":"control_datetime"},null,null,{"name":"email","qid":"68","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber","qid":"69","text":"Phone Number","type":"control_phone"}]);}, 20); 
+</script>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/static/form-common.css?v=d0f72cd
+"/>
+<style type="text/css"> print{*{-webkit-print-color-adjust: exact !important;color-adjust: exact !important;}.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.53028&themeRevisionID=63e6805f64383509e31513f4"/>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_styles.css?3.3.53028" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_feature.css?3.3.53028" />
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+/*PREFERENCES STYLE*/
+    .form-all {
+      font-family: Inter, sans-serif;
+    }
+  
+    .form-label.form-label-auto {
+      
+    display: block;
+    float: none;
+    text-align: left;
+    width: 100%;
+  
+    }
+  
+    .form-line {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .form-all {
+      max-width: 752px;
+      width: 100%;
+    }
+  
+    .form-label.form-label-left,
+    .form-label.form-label-right,
+    .form-label.form-label-left.form-label-auto,
+    .form-label.form-label-right.form-label-auto {
+      width: 230px;
+    }
+  
+    .form-all {
+      font-size: 16px
+    }
+  
+    .supernova .form-all, .form-all {
+      background-color: #fff;
+    }
+  
+    .form-all {
+      color: #2C3345;
+    }
+    .form-header-group .form-header {
+      color: #2C3345;
+    }
+    .form-header-group .form-subHeader {
+      color: #2C3345;
+    }
+    .form-label-top,
+    .form-label-left,
+    .form-label-right,
+    .form-html,
+    .form-checkbox-item label,
+    .form-radio-item label,
+    span.FITB .qb-checkbox-label,
+    span.FITB .qb-radiobox-label,
+    span.FITB .form-radio label,
+    span.FITB .form-checkbox label,
+    [data-blotid][data-type=checkbox] [data-labelid],
+    [data-blotid][data-type=radiobox] [data-labelid],
+    span.FITB-inptCont[data-type=checkbox] label,
+    span.FITB-inptCont[data-type=radiobox] label {
+      color: #2C3345;
+    }
+    .form-sub-label {
+      color: #464d5f;
+    }
+  
+  .supernova {
+    background-color: rgba(255,255,255,0);
+  }
+  .supernova body {
+    background: transparent;
+  }
+  
+    .form-textbox,
+    .form-textarea,
+    .form-dropdown,
+    .form-radio-other-input,
+    .form-checkbox-other-input,
+    .form-captcha input,
+    .form-spinner input {
+      background-color: #fff;
+    }
+  
+      
+    .supernova {
+      background-repeat: no-repeat;
+      background-size:cover;
+      background-attachment: fixed;
+      background-position: center top;
+    }
+
+      .supernova, #stage {
+        background-image: none;
+      }
+    
+      .form-all {
+        background-image: none;
+      }
+    /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/.form-header-group.header-large h1 {
+    text-transform : uppercase;
+    font-size : 30px;
+    font-weight : 500;
+    text-align : left;
+}
+
+.supernova {
+  background-image: linear-gradient(#1e194c, #50498e);
+  background-attachment: fixed;
+}
+    /* Injected CSS Code */
+</style>
+
+<form asp-action="Create" method="post" class="jotform-form"  >
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_43" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_43" class="form-header" data-component="header">College Admissions Form</h1>
+            <div id="subHeader_43" class="form-subHeader">Enter your admission information below</div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_fullname" id="id_56"><label class="form-label form-label-top form-label-extended form-label-auto" id="label_56" for="first_56" aria-hidden="false">Full Name </label>
+        <div id="cid_56" class="form-input-wide" data-layout="full">
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_birthdate" id="id_39"><label class="form-label form-label-top" id="label_39" for="input_39" aria-hidden="false"> Birth Date </label>
+        <div id="cid_39" class="form-input-wide" data-layout="full">
+                    <div class="form-group col-md-6">
+                        <input asp-for="DateOfBirth" class="form-control" autocomplete="DateOfBirth" aria-describedby="dateOfBirthHelp" placeholder="Date of Birth">
+                        
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </div>
+      </li>
+            <li class="form-line" data-type="control_fullname" id="id_56">
+                <label class="form-label form-label-top form-label-extended form-label-auto" id="label_56" for="first_56" aria-hidden="false">Place Of Birth</label>
+                <div id="cid_56" class="form-input-wide" data-layout="full">
+                    <input asp-for="PlaceOfBirth" class="form-control" />
+                    <span asp-validation-for="PlaceOfBirth" class="text-danger"></span>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-1" data-type="control_radio" id="id_15">
+                <label class="form-label form-label-top form-label-auto" id="label_15" aria-hidden="false"> Cadidate Type </label>
+                <div id="cid_15" class="form-input-wide" data-layout="full">
+                    <select asp-for="CadidateType" asp-items='new SelectList(new[]
+                        {
+                            new SelectListItem { Value = "1", Text = "TYPE 1" },
+                            new SelectListItem { Value = "2", Text = "TYPE 2" },
+                            new SelectListItem { Value = "3", Text = "TYPE 3" }
+
+                        }, "Value", "Text")' class="form-control">
+                        <option value="">-- Select type --</option>
+                    </select>
+            </li>
+            <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_27">
+                <label class="form-label form-label-top" id="label_27" for="input_27" aria-hidden="false"> Priority Area </label>
+                <div id="cid_27" class="form-input-wide" data-layout="half">
+
+                    <select asp-for="PriorityArea" asp-items='new SelectList(new[]
+                        {
+                            new SelectListItem { Value = "TYPE 1", Text = "TYPE 1" },
+                            new SelectListItem { Value = "TYPE 2", Text = "TYPE 2" },
+                            new SelectListItem { Value = "TYPE 3", Text = "TYPE 3" }
+
+                        }, "Value", "Text")' class="form-control">
+                        <option value="">-- Select type --</option>
+                    </select>
+
+                </div>
+            </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_radio" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" aria-hidden="false"> Gender </label>
+        <div id="cid_15" class="form-input-wide" data-layout="full">
+                    <select asp-for="Gender" asp-items='new SelectList(new[]
+                        {
+                            new SelectListItem { Value = "Male", Text = "Male" },
+                            new SelectListItem { Value = "Female", Text = "Female" }
+                        }, "Value", "Text")' class="form-control">
+                        <option value="">-- Select Gender --</option>
+                    </select>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_27"><label class="form-label form-label-top" id="label_27" for="input_27" aria-hidden="false"> Of which country are you a citizen? </label>
+        <div id="cid_27" class="form-input-wide" data-layout="half"> 
+
+                        <input asp-for="CurrentAddress" class="form-control" />
+                        <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+           
+           </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_phone" id="id_41"><label class="form-label form-label-top form-label-auto" id="label_41" for="input_41_full"> Phone </label>
+        <div id="cid_41" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top">
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="(000) 000 000" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_email" id="id_55"><label class="form-label form-label-top form-label-auto" id="label_55" for="input_55" aria-hidden="false"> E-mail Address </label>
+        <div id="cid_55" class="form-input-wide" data-layout="half">
+                    <input asp-for="Email" class="form-control" autocomplete="username" aria-required="true" aria-label="Email" placeholder="name@example.com" />                 
+                    <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+      </li>
+            <input type="hidden" asp-for="PaymentStatus" value="false" />
+            <input type="hidden" asp-for="CadidateStatus" value="1" />
+      
+      
+   
+      <li id="cid_62" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-default">
+          <div class="header-text httal htvam">
+            <h2 id="header_62" class="form-header" data-component="header">Education</h2>
+          </div>
+        </div>
+     
+      <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_65"><label class="form-label form-label-top form-label-auto" id="label_65" for="lite_mode_65" aria-hidden="false"> Graduation Date </label>
+        <div id="cid_65" class="form-input-wide" data-layout="half">
+          <div data-wrapper-react="true">
+                        <div class="form-group col-md-6">
+                            <input asp-for="DateOfGradution" class="form-control" autocomplete="DateOfBirth" aria-describedby="dateOfBirthHelp" placeholder="Date of Birth">
+                           
+                            <span asp-validation-for="DateOfGradution" class="text-danger"></span>
+                        </div>
+        </div>
+      </li>
+
+            <li id="cid_49" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group  header-default">
+                    <div class="header-text httal htvam">
+                        <h2 id="header_49" class="form-header" data-component="header">Test Exam</h2>                     
+                    </div>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_65">
+            <label class="form-label form-label-top form-label-auto" id="label_65" for="lite_mode_65" aria-hidden="false"> Subject Combination </label>
+            <div id="cid_65" class="form-input-wide" data-layout="half">
+                <div data-wrapper-react="true">
+                    <div class="form-group col-md-6">
+                            <select asp-for="SubjectCombination" class="form-control" asp-items="ViewBag.Id"></select>
+                    </div>
+                </div>
+                </li>
+   
+      <li id="cid_49" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-default">
+          <div class="header-text httal htvam">
+            <h2 id="header_49" class="form-header" data-component="header">Application Fee</h2>
+           
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_checkbox" id="id_50"><label class="form-label form-label-top" id="label_50" aria-hidden="false"> Payment Method: </label>
+        <div id="cid_50" class="form-input-wide" data-layout="full">
+                    <select asp-for="PaymentMethod" asp-items='new SelectList(new[]
+                        {
+                            new SelectListItem { Value = "PayPal", Text = "PayPal" },
+                        }, "Value", "Text")' class="form-control">
+                        <option value="">-- Select Payment method --</option>
+                    </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_52">
+        <div id="cid_52" class="form-input-wide" data-layout="full">
+          <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+          </div>
+        </div>
+      </li>
+      <li style="clear:both"></li>
+      <li style="display:none">Should be Empty: <input type="text" name="website" value="" type="hidden" /></li>
+    </ul>
+  </div>
+  <script>
+    JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+    JotForm.poweredByText = "Powered by Jotform";
+  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="240950990842463" />
+  <script type="text/javascript">
+    var all_spc = document.querySelectorAll("form[id='240950990842463'] .si" + "mple" + "_spc");
+    for (var i = 0; i < all_spc.length; i++)
+    {
+      all_spc[i].value = "240950990842463-240950990842463";
+    }
+  </script>
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.isNewSACL=true;</script>
