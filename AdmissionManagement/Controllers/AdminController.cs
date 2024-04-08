@@ -1,8 +1,10 @@
 ﻿using AdmissionManagement.Data;
 using AdmissionManagement.Data;
+using AdmissionManagement.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace ExamManagement.Controllers
@@ -32,6 +34,11 @@ namespace ExamManagement.Controllers
                 .ToList();
 
             return View(students);
+        }
+        public async Task<IActionResult> PaymentDetails()
+        {
+            List<PaymentDetails> paymentDetails = await _context.PaymentDetails.ToListAsync();
+            return View(paymentDetails);
         }
 
 

@@ -31,6 +31,11 @@ namespace AdmissionManagement.Data
         public DbSet<AdmissionsManagement.Models.Exam> Exam { get; set; } = default!;
 
         public DbSet<AdmissionManagement.Models.SubjectCombination> SubjectCombination { get; set; } = default!;
+        public DbSet<AdmissionManagement.Models.PaymentDetails> PaymentDetails { get; set; } = default!;
+        public DbSet<AdmissionManagement.Models.Location> Location { get; set; } = default!;
+        public DbSet<AdmissionManagement.Models.LocationCadidate> LocationCadidate { get; set; } = default!;
+
+
 
     }
 }

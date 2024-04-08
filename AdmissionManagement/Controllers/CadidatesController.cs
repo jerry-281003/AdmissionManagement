@@ -22,9 +22,26 @@ namespace AdmissionManagement.Controllers
         // GET: Cadidates
         public async Task<IActionResult> Index()
         {
-              return _context.Cadidate != null ? 
-                          View(await _context.Cadidate.ToListAsync()) :
+            return _context.Cadidate != null ?
+                        View(await _context.Cadidate.Where(c => c.CadidateStatus == 1).ToListAsync()) :
                           Problem("Entity set 'AdmissionManagement2Context.Cadidate'  is null.");
+        }
+
+
+
+        public async Task<IActionResult> Approved(int? id)
+        {
+            var cadidate = await _context.Cadidate.FindAsync(id);
+            cadidate.CadidateStatus = 2;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<ActionResult> Declined(int? id)
+        {
+            var cadidate = await _context.Cadidate.FindAsync(id);
+            cadidate.CadidateStatus = 3;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Cadidates/Details/5
@@ -56,7 +73,7 @@ namespace AdmissionManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CadidateId,FullName,PlaceOfBirth,DateOfBirth,CurrentAddress,DateOfGradution,CadidateType,PriorityArea,PhoneNumber,Gender,SubjectCombination,PaymentMethod,PaymentStatus,CadidateStatus,Email")] Cadidate cadidate)
+        public async Task<IActionResult> Create([Bind("CadidateId,FullName,PlaceOfBirth,DateOfBirth,CurrentAddress,DateOfGradution,CadidateType,PriorityArea,PhoneNumber,Gender,SubjectCombination,PaymentMethod,PaymentStatus,CadidateStatus,Email,UserId")] Cadidate cadidate)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +105,7 @@ namespace AdmissionManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CadidateId,FullName,PlaceOfBirth,DateOfBirth,CurrentAddress,DateOfGradution,CadidateType,PriorityArea,PhoneNumber,Gender,SubjectCombination,PaymentMethod,PaymentStatus,CadidateStatus,Email")] Cadidate cadidate)
+        public async Task<IActionResult> Edit(int id, [Bind("CadidateId,FullName,PlaceOfBirth,DateOfBirth,CurrentAddress,DateOfGradution,CadidateType,PriorityArea,PhoneNumber,Gender,SubjectCombination,PaymentMethod,PaymentStatus,CadidateStatus,Email,UserId")] Cadidate cadidate)
         {
             if (id != cadidate.CadidateId)
             {

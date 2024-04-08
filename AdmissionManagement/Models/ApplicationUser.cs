@@ -15,5 +15,6 @@ namespace AdmissionsManagement.Models
 
         [Required(ErrorMessage = "Enter gender type")]
         public string Gender { get; set; }
+        public string  CadidateExamId { get; set; }
     }
 }

@@ -12,14 +12,14 @@ namespace AdmissionsManagement.Models
         public string PlaceOfBirth { get; set; }
         [Required]
         [DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         
         public DateTime DateOfBirth { get; set; }
         [Required]
         public string CurrentAddress { get; set; }
         [Required]
         [DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         
         public DateTime DateOfGradution { get; set; }
         [Required]
@@ -41,6 +41,8 @@ namespace AdmissionsManagement.Models
         [Required]
         [DataType (DataType.EmailAddress)]
         public string Email { get; set; }
+        [Required]
+        public string UserId { get; set;}
 
     }
 }

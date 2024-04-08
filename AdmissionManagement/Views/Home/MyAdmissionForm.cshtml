@@ -1,0 +1,96 @@
+﻿@model IEnumerable<AdmissionsManagement.Models.Cadidate>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadidateStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentStatus)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @if (item.CadidateStatus == 1)
+                    {
+                        <span>Wait for confirmation</span>
+                    }
+                    else if (item.CadidateStatus == 2)
+                    {
+                        <span>Approved</span>
+                    }
+                    else if (item.CadidateStatus == 3)
+                    {
+                        <span>Declined</span>
+                    }
+                </td>
+                <td>
+                    @if (item.PaymentStatus == false)
+                    {
+                        <span>Unpaid</span>
+                    }
+                    @if (item.PaymentStatus == true)
+                    {
+                        <span>Paid</span>
+                    }
+                </td>
+                <td>
+                    @if (item.CadidateStatus == 1)
+                    {
+                        <a asp-controller="Home" asp-action="AdmissionDetails" asp-route-id="@item.CadidateId">Edit</a>  <span>|</span>
+                        <a asp-controller= "Cadidates" asp-action= "Delete" asp-route-id = "@item.CadidateId" > Delete </a>
+                    }
+                    else if (item.CadidateStatus == 2 && item.PaymentStatus == false)
+                    {
+                        <form id="form-submit" asp-controller="Payment" asp-action="CreatePayment" method="post">
+                            <input type="hidden" name="currency" value="USD">
+                            <input type="hidden" name="total" value="2">
+                            <button type="submit" class="btn btn-info btn-block btn-lg">
+                                <div class="d-flex justify-content-between">
+                                    <span> 2$</span>
+                                    <span> Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+
+                                </div>
+                            </button>
+                        </form>
+                    }
+                    else if (item.CadidateStatus == 2 && item.PaymentStatus == true)
+                    {
+
+                        <form asp-controller="LocationCadidates" asp-action="Create" >
+                            <input type="hidden" name="Id" value="@item.UserId">
+                            <button type="submit" class="btn btn-info btn-block btn-lg">
+                                <div class="d-flex justify-content-between">
+                                    
+                                    <span> Get exam test infomation <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+
+                                </div>
+                            </button>
+                        </form>
+                    }
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

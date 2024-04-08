@@ -71,6 +71,7 @@ namespace AdmissionManagement.Controllers
         // GET: SubjectCombinations/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
+            ViewData["CourseName"] = new SelectList(_context.Course, "CourseName", "CourseName");
             if (id == null || _context.SubjectCombination == null)
             {
                 return NotFound();
