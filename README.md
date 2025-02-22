@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>University Entrance Exam Management System - README</title>
+  
 </head>
 <body>
   <h1>University Entrance Exam Management System</h1>
